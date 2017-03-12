@@ -1,7 +1,12 @@
 
 <h1>Listing info</h1>
-<h2><%= @product.name %></h2>
-<h3><%= @product.price %></h3>
-<p><%= @product.image %></p>
+<h3><%= @product.name %></h3>
+<p>Price per night $ <%= @product.price %></p>
+<p> <img src= <%= @product.image %> > </p>
 <p><%= @product.description %></p>
 <a href="/listings">Back to all listings</a>
+<%= form_tag "/listings/#{@product.id}", method: :delete do %>
+  <input type="submit" value="Destroy Listing">
+  <% end %> 
+
+  <a href="/listings/<%= @product.id %>/edit">edit</a>

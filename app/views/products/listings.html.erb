@@ -1,8 +1,9 @@
 <h1>Listings</h1>
 <p> <% @products.each do |product| %> </p>
-<p1> <%= product.name %> </p1>
-<p2> <br> Price per night: $<%= product.price %> </p2>
+ <h3><a href="/listings/<%= product.id %>"><%= product.name %></a></h3>
+<p2> Price per night: $<%= product.price %> </p2>
 <p3> <br> <img src= "<%= product.image %>" </p3>
 <p4> <br> About this property: <br> <%= product.description %> </p4>
 <%end%>
-
+<br>
+ <p><a href="/listings/new">Create new listing</a></p>
