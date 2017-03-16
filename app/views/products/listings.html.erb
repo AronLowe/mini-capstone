@@ -1,9 +1,15 @@
-<h1>Listings</h1>
-<p> <% @products.each do |product| %> </p>
- <h3><a href="/listings/<%= product.id %>"><%= product.name %></a></h3>
-<p2> Price per night: $<%= product.price %> </p2>
-<p3> <br> <img src= "<%= product.image %>" </p3>
-<p4> <br> About this property: <br> <%= product.description %> </p4>
+<h1 class ="header">Listings</h1>
+<div class="row">
+  <p> <% @products.each do |product| %> </p>
+  <div class="col-md-6">
+  <div class="well">
+  <h3> <a href="/listings/<%= product.id %>"><%= product.name %></a> </h3>
+  <p class="price"> Price per night: <%= number_to_currency(product.price) %> </p>
+  <p> <img class="listing-image" src= "<%= product.image %>"> </p>
+  <p class="info"> <br> About this property: <br> <%= product.description %> </p>
+</div>
+</div>
 <%end%>
+</div>
 <br>
  <p><a href="/listings/new">Create new listing</a></p>

@@ -1,12 +1,14 @@
 
 <h1>Listing info</h1>
 <h3><%= @product.name %></h3>
-<p>Price per night $ <%= @product.price %></p>
+<p>Price per night $ <%= number_to_currency(@product.price) %>  </p>
+<p> <%= @product.sale_message %> including tax = <%= number_to_currency(@product.total) %> </p>
 <p> <img src= <%= @product.image %> > </p>
 <p><%= @product.description %></p>
 <a href="/listings">Back to all listings</a>
 <%= form_tag "/listings/#{@product.id}", method: :delete do %>
-  <input type="submit" value="Destroy Listing">
   <% end %> 
 
   <a href="/listings/<%= @product.id %>/edit">edit</a>
+
+   <br> <input type="submit" value="Destroy Listing">

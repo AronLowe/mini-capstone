@@ -1,3 +1,45 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body { 
+  background-image: url('asanoha-400px.png');
+  font-family: Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+}
+
+.navbar-brand {
+  font-family: 'Lobster', cursive;
+  font-size: 2.5em;
+}
+
+.info {
+  font-family: Tahoma,Verdana,Segoe,sans-serif
+}
+
+.price {
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+  font-size: 1.3em ;
+}
+
+.header {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    border: 3px solid grey;
+    padding: 10px;
+}
+
+.listing-image {
+  width: 100%;
+}
+
+.well {
+  background-color: rgba(255, 255, 255, 0.0);
+  border-color: rgba(255, 255, 255, 0.0);
+  outline: none;
+  box-shadow: none;
+}
+
+/*.Last_minute_price {
+  color: red
+}*/
