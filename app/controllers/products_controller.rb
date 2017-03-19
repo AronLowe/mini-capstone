@@ -50,6 +50,11 @@ class ProductsController < ApplicationController
     render "listings_destroy.html.erb"
   end
 
+  def last_minute_deals
+    @products = Product.where("price < ?", 1000)
+    render "last_minute_deals.html.erb"
+  end
+
 
 
 end

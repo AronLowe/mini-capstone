@@ -1,0 +1,12 @@
+ <h class="last_minute_deal">Last Minute Deals</h>
+
+ <p> <% @products.each do |product| %> </p> 
+  <div class="col-md-6">
+  <div class="well">
+  <h3> <<%= product.name %></a> </h3>
+  <p class="price"> Price per night: <%= number_to_currency(product.price) %> </p>
+  <p> <img class="listing-image" src= "<%= product.image %>"> </p>
+  <p class="info"> <br> About this property: <br> <%= product.description %> </p>
+</div>
+</div>
+<% end %>
