@@ -21,6 +21,7 @@ class Product < ApplicationRecord
     # else
     #   return false
     # end
+    end
   end
 
   ###the above is meant to return red prices if dicounted , need to write logic in html - check peters gitub

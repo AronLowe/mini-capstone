@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def listings_method
-    @products=Product.all
+    sort_attribute = params[:sort_by] || "name"
+    @products=Product.all.order(sort_attribute)
     render "listings.html.erb"
   end
 
