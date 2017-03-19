@@ -1,13 +1,17 @@
 class ProductsController < ApplicationController
   def listings_method
+    if params[:last_minute] == "true"
+      @products = Product.where("price < ?", 1000)
+    else
     # if params[:sort_by]
     #   @products =  Product.all.order(params[:sort_by]=>params[:sort_order]) 
     #    else
     #   @products = Product.all
     # end
-    sort_attribute = params[:sort_by] || "name"
-    sort_attribute_order = params[:sort_order]  || "asc"
-    @products =  Product.all.order(sort_attribute => sort_attribute_order) 
+      sort_attribute = params[:sort_by] || "name"
+      sort_attribute_order = params[:sort_order]  || "asc"
+      @products =  Product.all.order(sort_attribute => sort_attribute_order) 
+    end
     render "listings.html.erb"
   end
 
@@ -56,10 +60,10 @@ class ProductsController < ApplicationController
     render "listings_destroy.html.erb"
   end
 
-  def last_minute_deals
-    @products = Product.where("price < ?", 1000)
-    render "last_minute_deals.html.erb"
-  end
+  # def last_minute_deals
+  #   @products = Product.where("price < ?", 1000)
+  #   render "last_minute_deals.html.erb"
+  # end
 
 
 
