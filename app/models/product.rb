@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
-belongs_to :supplier
+  belongs_to :supplier
+  has_many :images
   def sale_message
     if "#{price}".to_i <= 1000
       then "Last minute price"
