@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-
+belongs_to :supplier
   def sale_message
     if "#{price}".to_i <= 1000
       then "Last minute price"
@@ -34,5 +34,11 @@ class Product < ApplicationRecord
   def total
     "#{price}".to_i + tax
   end
+ 
+  # def supplier
+  #   Supplier.find_by(id: self.supplier.id)
+  # end
 
+    #makes alot of assumptions
+ 
 end

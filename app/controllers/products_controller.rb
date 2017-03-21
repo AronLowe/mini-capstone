@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   def listings_method
-    if params[:last_minute] == "true"
+    if params[:form_name]
+      @products = Product.where("name LIKE?", "%", + params[:form_name] + "%")
+    elsif params[:last_minute] == "true"
       @products = Product.where("price < ?", 1000)
     else
     # if params[:sort_by]
@@ -63,6 +65,11 @@ class ProductsController < ApplicationController
   # def last_minute_deals
   #   @products = Product.where("price < ?", 1000)
   #   render "last_minute_deals.html.erb"
+  # end
+
+  # def search
+  #   @product= Product.where("name LIKE?", "%", + params[:form_name] + "%")
+  #   render "listing.html.erb"
   # end
 
 

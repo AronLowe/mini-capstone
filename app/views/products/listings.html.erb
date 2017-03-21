@@ -6,6 +6,7 @@
   <h3> <a href="/listings/<%= product.id %>"><%= product.name %></a> </h3>
   <p class="price"> Price per night: <%= number_to_currency(product.price) %> </p>
   <p> <img class="listing-image" src= "<%= product.image %>"> </p>
+  <p> Super Host: <%= product.supplier.name %> </p>
   <p class="info"> <br> About this property: <br> <%= product.description %> </p>
 </div>
 </div>
