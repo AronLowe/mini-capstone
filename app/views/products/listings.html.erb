@@ -1,3 +1,6 @@
+<% if current_user %>
+<p> Hi <%= current_user.name %>!</p>
+<% end %>
 <h1 class ="header">Listings</h1>
 <div class="row">
   <p> <% @products.each do |product| %> </p>
