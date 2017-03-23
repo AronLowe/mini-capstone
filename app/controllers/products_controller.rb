@@ -30,6 +30,12 @@ class ProductsController < ApplicationController
       description: params[:form_description]
       )
     product.save
+    # image = Image.new(
+    #   url: params[:image],
+    #   product_id: @product.id
+    #   )
+    # image.save
+    ###still need to erase image from product model 
     render "listings_create.html.erb"
   end
 

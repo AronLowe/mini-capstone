@@ -3,5 +3,6 @@ class Supplier < ApplicationRecord
   #   Product.where(supplier_id: self.id)
   # end
   has_many :products
-  #makes alot of assumptions
+
+  #makes alot of 
 end

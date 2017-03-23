@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "/" => "products#listings"
+  get "/" => "products#listings_method"
   get "/listings" => "products#listings_method"
   get "/listings/new" => "products#new"
   post "/listings" => "products#create"
@@ -10,5 +10,13 @@ Rails.application.routes.draw do
   delete "/listings/:id" => "products#destroy"
   post "/listings_search" => "products#search"
   get "/suppliers" => "suppliers#index"
+
+  get "/signup" => "users#new"
+  post "/users" => "users#create"
+
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  get "/logout" => "sessions#destroy"
+  
 end
 

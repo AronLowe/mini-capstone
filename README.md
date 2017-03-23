@@ -1,3 +1,8 @@
+# to do
+Remove images from product controller
+Fix areas where broken
+Add bootstrap to show flash messages
+
 # README
 
 This README would normally document whatever steps are necessary to get the
