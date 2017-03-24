@@ -30,12 +30,17 @@ class Product < ApplicationRecord
         
 
   def tax
-    "#{price}".to_i * 0.09
+    "#{price}".to_i * 0.09 
   end
 
   def total
     "#{price}".to_i + tax
   end
+
+  def subtotal
+    "#{price}".to_i 
+  end
+
  
   # def supplier
   #   Supplier.find_by(id: self.supplier.id)

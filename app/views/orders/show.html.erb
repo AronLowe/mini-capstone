@@ -1,0 +1,9 @@
+Order ID: <%= @order.id %>
+<br>
+Order Quantity: <%= @order.quantity %>
+<br>
+Order Subtotal: <%= number_to_currency(@order.subtotal) %>
+<br>
+Order Tax: <%= number_to_currency(@order.tax) %>
+<br>
+Order Total = <%= number_to_currency(@order.total) %> 

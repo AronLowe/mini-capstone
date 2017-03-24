@@ -10,13 +10,28 @@
 <p><img src= <%=@product.images[3].url %> > </p>
 
 <p><%= @product.description %></p>
-<a href="/listings">Back to all listings</a>
 <%= form_tag "/listings/#{@product.id}", method: :delete do %>
   <% end %> 
+
+<%= form_tag "/orders", method: :post do %>
+  <div>
+    Add Quantity: <input type="text" name="form_quantity">
+    </div>
+    <div>
+    Add Product id (look at the url): <input type="text" name="form_product_id">
+    </div>
+    <div>
+    Add Product id (look at the url): <input type="text" value="<%= @product.id %>" name="form_product_id">
+    </div>
+  <div>
+    <input type="submit" value="Create Order">
+  </div>
+  <% end %>
 
   <a href="/listings/<%= @product.id %>/edit">edit</a>
 
    <br> <input type="submit" value="Destroy Listing">
+   <a href="/listings">Back to all listings</a>
 
 
    
