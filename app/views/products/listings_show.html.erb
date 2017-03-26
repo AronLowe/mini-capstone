@@ -18,10 +18,7 @@
     Add Quantity: <input type="text" name="form_quantity">
     </div>
     <div>
-    Add Product id (look at the url): <input type="text" name="form_product_id">
-    </div>
-    <div>
-    Add Product id (look at the url): <input type="text" value="<%= @product.id %>" name="form_product_id">
+<input type="hidden" value="<%= @product.id %>" name="form_product_id">
     </div>
   <div>
     <input type="submit" value="Create Order">

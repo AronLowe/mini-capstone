@@ -22,4 +22,8 @@ class Order < ApplicationRecord
     product.images[0].url
   end
 
+  def order_product_id
+    product.id
+  end
+
 end
