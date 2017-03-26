@@ -14,4 +14,12 @@ class Order < ApplicationRecord
     product.price * quantity
   end
 
+  def order_name
+    product.name 
+  end
+
+  def order_image
+    product.images[0].url
+  end
+
 end

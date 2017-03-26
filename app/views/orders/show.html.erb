@@ -1,3 +1,7 @@
+<h1> <%= @order.order_name %> </h1>
+<br>
+<img src= "<%= @order.order_image %>"> </a>
+<br>
 Order ID: <%= @order.id %>
 <br>
 Order Quantity: <%= @order.quantity %>
@@ -7,3 +11,6 @@ Order Subtotal: <%= number_to_currency(@order.subtotal) %>
 Order Tax: <%= number_to_currency(@order.tax) %>
 <br>
 Order Total = <%= number_to_currency(@order.total) %> 
+<br>
+Order completed by: <%= current_user.email %>
+<br>
