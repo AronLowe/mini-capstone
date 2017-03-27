@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   get "/" => "products#listings_method"
   get "/listings" => "products#listings_method"
