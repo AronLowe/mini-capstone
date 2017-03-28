@@ -5,6 +5,9 @@ class ProductsController < ApplicationController
       #need search to work
     elsif params[:last_minute] == "true"
       @products = Product.where("price < ?", 1000)
+    elsif params[:category]
+      category = Category.find_by(name: params[:category])
+      @products = category.products
     else
     # if params[:sort_by]
     #   @products =  Product.all.order(params[:sort_by]=>params[:sort_order]) 
