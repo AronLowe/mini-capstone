@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   def listings_method
     if params[:form_name]
       @products = Product.where("lower(name) LIKE?", "%" + params[:form_name].downcase + "%")
-      #need search to work
     elsif params[:last_minute] == "true"
       @products = Product.where("price < ?", 1000)
     elsif params[:category]

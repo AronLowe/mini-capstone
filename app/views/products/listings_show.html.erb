@@ -1,14 +1,23 @@
 
 <h1>Listing info</h1>
 <h3><%= @product.name %></h3>
-<p>Price per night $ <%= number_to_currency(@product.price) %>  </p>
-<p> <%= @product.sale_message %> including tax = <%= number_to_currency(@product.total) %> </p>
+<ul>
+<% @product.categories.each do |category| %>
+  <li>
+    <%= category.name %>
+  </li>
+  <% end %>
+</ul>
+
 <!-- <p> <img src= <%= @product.image %> > </p> -->
 <p><img src= <%=@product.images[0].url %> </p> 
 <p><img src= <%=@product.images[1].url %> > </p>
 <p><img src= <%=@product.images[2].url %> > </p>
 <p><img src= <%=@product.images[3].url %> > </p>
-
+----------------------------
+<p>Price per night $ <%= number_to_currency(@product.price) %>  </p>
+<p> <%= @product.sale_message %> including tax = <%= number_to_currency(@product.total) %> </p>
+----------------------------
 <p><%= @product.description %></p>
 <%= form_tag "/listings/#{@product.id}", method: :delete do %>
   <% end %> 
