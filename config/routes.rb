@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get "/listings/new" => "products#new"
   post "/listings" => "products#create"
   # get "/listings/last_minute_deals" =>"products#last_minute_deals"
+  get "/carted_products" => "carted_products#index"
+  post "/carted_products" => "carted_products#create"
+  delete "/carted_products/:id" => "carted_products#destroy"
+
   get "/listings/:id" => "products#show"
   get "/listings/:id/edit" => "products#edit"
   patch "/listings/:id" => "products#update"
@@ -21,8 +25,6 @@ Rails.application.routes.draw do
 
   post "/orders" => "orders#create"
   get "/orders/:id" => "orders#show"
-
-  post "/carted_products" => "carted_products#create"
 
 end
 

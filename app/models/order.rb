@@ -1,6 +1,8 @@
 class Order < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :product, optional: true  #turns off the need for an id
+  has_many :carted_products
+  has_many :products, through: :carted_products
 
   def calc_tax
     product.price * 0.09 * quantity
@@ -15,7 +17,7 @@ class Order < ApplicationRecord
   end
 
   def order_name
-    product.name 
+    product.name
   end
 
   def order_image

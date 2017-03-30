@@ -1,16 +1,21 @@
-<h1> <%= @order.order_name %> </h1>
+<h1>You booked the following properties </h1>
+<p>
+<% @order.products.each do |product| %>
+ <%= product.name %>
+ Price <%= product.total %>
+ <br>
+ <% end %> 
+ </p>
+
+Here are your order details:
 <br>
-<img src= "<%= @order.order_image %>"> 
-<br>
-Order ID: <%= @order.id %>
-<br>
-Order Quantity: <%= @order.quantity %>
-<br>
-Order Subtotal: <%= number_to_currency(@order.subtotal) %>
-<br>
-Order Tax: <%= number_to_currency(@order.tax) %>
-<br>
-Order Total = <%= number_to_currency(@order.total) %> 
-<br>
-Order completed by: <%= current_user.email %>
-<br>
+Order ID <%= @order.id %>
+ <div>
+ Order subtotal <%= @order.subtotal %>
+ </div>
+ <div>
+ Order Tax <%= @order.tax %>
+ </div>
+ <div>
+ Order total <%= @order.total %>
+ </div>
