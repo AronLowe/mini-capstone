@@ -16,4 +16,6 @@
 <%end%>
 </div>
 <br>
+<% if current_user && current_user.admin %>
  <p><a href="/listings/new">Create new listing</a></p>
+ <% end %>

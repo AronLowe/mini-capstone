@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin!, except: [:index, :show]
+  ###code comes from application controller  only admin can see certain pages
+  
   def listings_method
     if params[:form_name]
       @products = Product.where("lower(name) LIKE?", "%" + params[:form_name].downcase + "%")
@@ -21,6 +24,10 @@ class ProductsController < ApplicationController
   end
 
   def new
+    # unless current_user && current_user.admin
+    #   redirect_to '/'
+    #   return
+    # end
     render "listings_new.html.erb"
   end
 

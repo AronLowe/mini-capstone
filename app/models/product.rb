@@ -5,6 +5,16 @@ class Product < ApplicationRecord
   has_many :category_products
   has_many :categories, through: :category_products
   has_many :carted_products
+
+  validates :name, presence: true, uniqueness: true
+  validates :price, presence: true, numericality: { only_integer: true }
+  validates :description, presence: true, length: { maximum: 500,
+    too_long: "%{count} characters is the maximum allowed" }
+
+# name - presence - uniqueness
+# price - presence - numericality
+# description - presence - length of 500 characters
+
   def sale_message
     if "#{price}".to_i <= 1000
       then "Last minute price"

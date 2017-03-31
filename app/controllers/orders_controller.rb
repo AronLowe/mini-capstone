@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-
+  before_action :authenticate_user!
+##refactoring is in peters commits --- very worth it to look at as calc logic shouldnt live in controller
   def create
     @carted_products = CartedProduct.where(status: "carted", user_id: current_user.id)
     @subtotal = 0
@@ -32,9 +33,9 @@ class OrdersController < ApplicationController
     #   carted_product.update(
     #     order_id: order.id,
     #     status: "purchased")
-    # end  *****same as below*****
+    # end  *****same as below
 
-    carted_products.update_all(status: "purchased", order_id: order.id)
+    @carted_products.update_all(status: "purchased", order_id: order.id)
 
     flash[:success] = "Enjoy your stay"
     redirect_to "/orders/#{order.id}"

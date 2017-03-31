@@ -22,6 +22,8 @@
 <%= form_tag "/listings/#{@product.id}", method: :delete do %>
   <% end %> 
 
+  <% if current_user %>
+
 <%= form_tag "/carted_products", method: :post do %>
   <div>
     Add Quantity: <input type="text" name="form_quantity">
@@ -34,10 +36,12 @@
   </div>
   <% end %>
 
+  <% end %>
+<% if current_user && current_user.admin %>
   <a href="/listings/<%= @product.id %>/edit">edit</a>
 
    <br> <input type="submit" value="Destroy Listing">
    <a href="/listings">Back to all listings</a>
-
+<% end %>
 
    
